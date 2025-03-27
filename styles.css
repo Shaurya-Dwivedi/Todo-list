@@ -1,0 +1,142 @@
+body{
+    min-width: 500px;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin:0 0;
+    background-color:#D6F6DD;
+    display:flex;
+    color:#2E1F1E;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: black 1px solid;
+}
+
+#heading{
+    font-size:40px;
+    font-weight: 900;
+    margin:50px auto;
+    /* border: black 1px solid; */
+}
+
+#addtask-wrapper{
+    /* border: black 1px solid; */
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+#input-el{
+    background-color:#DAC4F7;
+    border: #7726E1 solid 1px;
+    padding: 10px 20px;
+    width:35vw;
+    font-size:17px;
+    margin:8px auto;
+    border-radius:5px;
+    transition: all 0.3s ease-in;
+}
+#input-el:hover{
+    border:black solid 1px;
+}
+#input-el::placeholder{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
+}
+#input-el:focus{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    outline: #106846 solid 1px;
+    border:none;
+}
+button{
+    padding:8px 16px;
+    font-size:large;
+    border-radius:5px;
+    font-weight:bold;
+    background-color:#8DDCA4;
+    border:#0d8f32 solid 1px;
+    transition: background-color 0.2s ease-out,transform 0.1s  ;
+}
+button:hover{
+    background-color:#45a760;
+    cursor:pointer;
+}
+button:active{
+    transform:translateY(2px);
+}
+.tasklist-wrapper{
+    margin-top:5vh;
+    text-align: center;
+    border : 1px solid red;
+    flex-direction: column;
+    background-color:#a8c3e2;
+    min-width: 40vw;
+    width:70vw;
+    min-height:70vh;
+    font-size:25px;
+    padding:5px 10px;
+    font-family: "Cedarville Cursive", cursive;
+    overflow-y:auto;
+}
+.cedarville-cursive-regular {
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+#tasklist-head-el{
+    font-size:45px;
+    display:inline-block;
+    /* border: black 1px dotted; */
+    margin:0;
+}  
+#tasklist{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    font-size:20px;
+    list-style-type: none;
+    padding:0;
+    /* border:green solid 1px; */
+    word-wrap: normal;
+}
+
+.list-btn{
+    padding:0;
+    background-color: #00000000;
+    border:none;
+    color:rgb(116, 96, 96);
+    border-radius:50%;
+    width:23px;
+    height:23px;
+}
+.list-btn:hover{
+    background-color:#00000000;
+}
+#add-empty-erorr{
+    color:red;
+}
+.done-icon{
+    color:rgb(4, 163, 4);
+}
+.delete-icon{
+    color:rgba(255, 0, 0, 0.767);
+}
+#last-task{
+    font-size:large;
+    font-weight: normal;
+    font-style: italic;
+    color:green;
+    padding:5px 10px;
+}
+#add-btn{
+    margin-bottom: 20px;
+}
+.edit-input{
+    margin:0 20px;
+    outline:black solid 1px;
+    border-radius:2px;
+    border:none;
+}
+.edit-done{
+    font-size:10px;
+}

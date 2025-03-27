@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/128/7692/7692809.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <h1 id="heading">To-Do List 📒</h1>
+    <div id="addtask-wrapper">
+        <p id="add-empty-error"></p>
+        <input type="text" id="input-el" placeholder="Enter task" required>
+        <button id="add-btn">ADD</button>
+    </div>
+    <h2 id="last-task"></h2>
+    <div class="tasklist-wrapper">
+        <h3 id="tasklist-head-el">task list</h3>
+        <ul id="tasklist"></ul>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
