@@ -1,11 +1,15 @@
-let tasks = []
-let lastCompleted;
+let tasks = [];
+tasks=localStorage.getItem("tasklist-item")?JSON.parse(localStorage.getItem("tasklist-item")):[];
+let lastCompleted=localStorage.getItem("last-completed");
 const addBtn = document.getElementById("add-btn");
 const inputEl = document.getElementById("input-el");
 const tasklistEl = document.getElementById("tasklist");
 const deleteBtn = document.getElementsByClassName("delete-btn");
 const editBtn = document.getElementsByClassName("edit-btn");
-let l=0;
+let l=JSON.parse(localStorage.getItem("total-tasks-done"))
+if(l){
+    document.getElementById("last-task").innerText=`Recently Completed Task: ${lastCompleted}\n Total completed Tasks: ${l}`;
+}
 addBtn.addEventListener("click", function () {
     let addEmptyError = document.getElementById("add-empty-error")
     if (inputEl.value != "") {
@@ -14,12 +18,13 @@ addBtn.addEventListener("click", function () {
         tasks.push(string);
         inputEl.value = "";
         tasklistEl.innerHTML = "";
+        localStorage.setItem("tasklist-item",JSON.stringify(tasks))
         tasks.forEach(renderList)
     } else {
         addEmptyError.innerText = "Kindly enter task first!"
     }
 })
-
+// tasks=localStorage.getItem("tasklist-items")
 tasks.forEach(renderList);
 
 tasklistEl.addEventListener("click", (event) => {
@@ -29,6 +34,7 @@ tasklistEl.addEventListener("click", (event) => {
             if (index == i) {
                 lastCompleted = tasks.splice(i, 1);
                 tasklistEl.innerHTML = "";
+                localStorage.setItem("tasklist-item",JSON.stringify(tasks))
                 tasks.forEach(renderList)
                 break;
             }
@@ -45,6 +51,7 @@ tasklistEl.addEventListener("click", (event) => {
                     if(document.getElementById(`edit-${index}`).value!="")
                     tasks[index]=document.getElementById(`edit-${index}`).value;
                     tasklistEl.innerHTML="";
+                    localStorage.setItem("tasklist-item",JSON.stringify(tasks))
                     tasks.forEach(renderList);
                 })
                 break;
@@ -58,11 +65,15 @@ tasklistEl.addEventListener("click", (event) => {
                 tasklistEl.innerHTML = "";
                 let lastTaskEl=document.getElementById("last-task")
                 lastTaskEl.innerText=`Recently Completed Task: ${lastCompleted}\n Total completed Tasks: ${++l}`;
+                localStorage.setItem("last-completed",lastCompleted)
+                localStorage.setItem("tasklist-item",JSON.stringify(tasks))
+                localStorage.setItem("total-tasks-done",l)
                 tasks.forEach(renderList)
                 break;
             }
         }
     }
+    
 })
 
 function renderList(list, position) {
