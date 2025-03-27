@@ -6,10 +6,17 @@ const inputEl = document.getElementById("input-el");
 const tasklistEl = document.getElementById("tasklist");
 const deleteBtn = document.getElementsByClassName("delete-btn");
 const editBtn = document.getElementsByClassName("edit-btn");
+const clearData=document.getElementById("clear-data");
 let l=JSON.parse(localStorage.getItem("total-tasks-done"))
 if(l){
     document.getElementById("last-task").innerText=`Recently Completed Task: ${lastCompleted}\n Total completed Tasks: ${l}`;
 }
+
+clearData.addEventListener("click", function() {
+    localStorage.clear();
+    location.reload();
+})
+
 addBtn.addEventListener("click", function () {
     let addEmptyError = document.getElementById("add-empty-error")
     if (inputEl.value != "") {
